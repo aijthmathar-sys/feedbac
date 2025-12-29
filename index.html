@@ -3,80 +3,118 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Resume</title>
+  <title>Feedback Form</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<header class="header">
-    <div class="profile-wrapper">
-      <img src="logo.png.jpg" class="profile-img" alt="profile">
-    </div>
 
-    <div class="name-box">MATHAR</div>
+  <div class="container">
+    <h2>Feedback Form</h2>
 
-    <div class="address">
-      Chennai · 600001 · +91 9876543210 · mathar@email.com · github.com/mathar
-    </div>
-  </header>
-
-
-  <div class="main-line"></div>
-
-
-  <main class="main">
-
-
-    <section class="left">
-
-      <h2>Profile</h2>
-      <p>
-        Innovative and motivated learner. Focused on web development and
-        continuous self-improvement.
-      </p>
-
-      <h2>Skills</h2>
-
-      <div class="skill">
-        <span>HTML</span>
-        <div class="bar">
-          <div class="fill w80"></div>
-        </div>
+    <form>
+      
+      <label>Name <span class="required">*</span></label>
+      <div class="row">
+        <input type="text" placeholder="First" required>
+        <input type="text" placeholder="Last" required>
       </div>
 
-      <div class="skill">
-        <span>CSS</span>
-        <div class="bar">
-          <div class="fill w70"></div>
-        </div>
+      
+      <label>Email <span class="required">*</span></label>
+      <input type="email" placeholder="Enter your email" required>
+
+      
+      <label>Your Experience *</label>
+      <div class="stars">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
       </div>
+      <div>overall how would you like rate your experience with us <span class="required">*</span> </div>
 
-      <div class="skill">
-        <span>JavaScript</span>
-        <div class="bar">
-          <div class="fill w60"></div>
-        </div>
-      </div>
+      
+      <table>
+        <tr>
+          <th></th>
+          <th>Very Unsatisfied</th>
+          <th>Unsatisfied</th>
+          <th>Neutral</th>
+          <th>Satisfied</th>
+          <th>Very Satisfied</th>
+        </tr>
 
-    </section>
+        <tr class="purchase">
+          <td>Purchase </td>
+          <td><input type="radio" name="purchase"></td>
+          <td><input type="radio" name="purchase"></td>
+          <td><input type="radio" name="purchase"></td>
+          <td><input type="radio" name="purchase"></td>
+          <td><input type="radio" name="purchase"></td>
+        </tr>
 
+        <tr>
+          <td>Service</td>
+          <td><input type="radio" name="service"></td>
+          <td><input type="radio" name="service"></td>
+          <td><input type="radio" name="service"></td>
+          <td><input type="radio" name="service"></td>
+          <td><input type="radio" name="service"></td>
+        </tr>
 
-    <section class="right">
+        <tr class="company-overall">
+          <td>Company Overall</td>
+          <td><input type="radio" name="company"></td>
+          <td><input type="radio" name="company"></td>
+          <td><input type="radio" name="company"></td>
+          <td><input type="radio" name="company"></td>
+          <td><input type="radio" name="company"></td>
+        </tr>
+      </table>
 
-      <h2>Work Experience</h2>
-      <p><b>Fresher / Trainee</b><br>
-        Learning full-stack development and building projects using
-        HTML, CSS, JavaScript.</p>
+    
+      <label>How likely are you to <span class="required">*</span></label>
+      <table>
+        <tr>
+          <th></th>
+          <th>Very Unlikely</th>
+          <th>Unlikely</th>
+          <th>Neutral</th>
+          <th>Likely</th>
+          <th>Very Likely</th>
+        </tr>
 
-      <h2>Education</h2>
-      <p>
-        Bachelor Degree<br>
-        Tamil Nadu
-      </p>
+        <tr class="buy-from-us-again">
+          <td>Buy from us again</td>
+          <td><input type="radio" name="buy"></td>
+          <td><input type="radio" name="buy"></td>
+          <td><input type="radio" name="buy"></td>
+          <td><input type="radio" name="buy"></td>
+          <td><input type="radio" name="buy"></td>
+        </tr>
+        <tr>
+          <td>recommand our company to others</td>
+          <td><input type="radio" name="buy"></td>
+          <td><input type="radio" name="buy"></td>
+          <td><input type="radio" name="buy"></td>
+          <td><input type="radio" name="buy"></td>
+          <td><input type="radio" name="buy"></td>
+        </tr>
+        <tr class="recommnad-our-products-to-others"></tr>
+        <td>Recommand our products to others</td>
+        <td><input type="radio" name="buy"></td>
+        <td><input type="radio" name="buy"></td>
+        <td><input type="radio" name="buy"></td>
+        <td><input type="radio" name="buy"></td>
+        <td><input type="radio" name="buy"></td>
+        </tr>
+      </table>
 
-    </section>
+      
+      <label>Additional comments</label>
+      <textarea rows="4"></textarea>
 
-  </main>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 
 </body>
 
