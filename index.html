@@ -1,159 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculator</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 30px;
-      box-sizing: border-box;
-    }
-
-    .calculator {
-      background-color: #d9d9d9;
-      border: 2px solid#333;
-      padding: 25px;
-      width: 330px;
-      border-radius: 4px;
-
-    }
-
-    #result {
-      background-color: #d9d9d9;
-      
-      padding-right: 10px;
-      width: 100%;
-      height: 50px;
-      font-size: 20px;
-      margin-bottom: 15px;
-      text-align: right;
-      padding: 10px;
-      border: 1px solid;
-      box-sizing: border-box;
-    }
-    .buttons{
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      
-    }
-    
-
-    button {
-      background-color: #d9d9d9;
-      border: 1px solid #bdbdbd;
-      color: #000;
-      height: 40px;
-      font-size: 16px;
-    }
-    .equal{
-      height: 48px;
-      grid-column: span 2;
-      background-color: #1e73be;
-      color: white;
-      font-size: 18px;
-      border: none;
-      grid-column: span 2;
-    }
-    #add,#subtract,#multiply,#divide{
-      color: #1e73be;
-    }
-    #clear{
-      color: #d32f2f;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <div class="page">
-    <h1 id="title">Calculator</h1><br><br>
-    <p id="description">Simple calculator using DOM manipulation</p>
-    <div class="calculator">
-      <input type="text" id="result" readonly>
-      <div class="buttons">
-      <button id="clear">c</button>
-      <button id="back"><-</button>
-      <button id="dot">.</button>
-      <button id="multiply">*</button>
-      <button id="7">7</button>
-      <button id="8">8</button>
-      <button id="9">9</button>
-      <button id="divide">/</button>
-      <button id="4">4</button>
-      <button id="5">5</button>
-      <button id="6">6</button>
-      <button id="subtract">-</button>
-      <button id="1">1</button>
-      <button id="2">2</button>
-      <button id="3">3</button>
-      <button id="add">+</button>
-      <button id="0">0</button>
-      <button id="00">00</button>
-      <button id="equal" style="background-color: blue; column-span: 2;">=</button>
-      </div>
-    </div>
-  </div>
-  <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
-  <script>
-    const result = document.getElementById("result")
-    result.value= "0";
-    const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-    numbers.forEach(num => {
-      document.getElementById(num).addEventListener("click", () => {
-        if(result.value==="0"){
-          if(num==="0"){
-            return;
-          }else{
-            result.value=num;
-          }
-          }else{
-            result.value += num;
-          }
-      })
-    })
+<div class="container">
+    <h2>Feedback Form</h2>
 
-    document.getElementById("add").onclick = () => {
-      result.value += "+"
-    };
-    document.getElementById("subtract").onclick = () => {
-      result.value += "-"
-    };
+    <form>
+        <!-- Name -->
+        <label>Name *</label>
+        <div class="row">
+            <input type="text" placeholder="First" required>
+            <input type="text" placeholder="Last" required>
+        </div>
 
-    document.getElementById("multiply").onclick = () => {
-      result.value += "*";
-    };
+        <!-- Email -->
+        <label>Email *</label>
+        <input type="email" placeholder="Enter your email" required>
 
-    document.getElementById("divide").onclick = () => {
-      result.value += "/";
-    };
+        <!-- Experience -->
+        <label>Your Experience *</label>
+        <div class="stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
 
-    document.getElementById("clear").onclick = () => {
-      result.value = "";
-    };
-    document.getElementById("equal").onclick = () => {
-      try {
-        result.value = eval(result.value)
-      } catch {
-        result.value = "";
-        alert("invalid")
-      }
-    };
+        <!-- Satisfaction Table -->
+        <table>
+            <tr>
+                <th></th>
+                <th>Very Unsatisfied</th>
+                <th>Unsatisfied</th>
+                <th>Neutral</th>
+                <th>Satisfied</th>
+                <th>Very Satisfied</th>
+            </tr>
 
-  </script>
+            <tr>
+                <td>Purchase</td>
+                <td><input type="radio" name="purchase"></td>
+                <td><input type="radio" name="purchase"></td>
+                <td><input type="radio" name="purchase"></td>
+                <td><input type="radio" name="purchase"></td>
+                <td><input type="radio" name="purchase"></td>
+            </tr>
+
+            <tr>
+                <td>Service</td>
+                <td><input type="radio" name="service"></td>
+                <td><input type="radio" name="service"></td>
+                <td><input type="radio" name="service"></td>
+                <td><input type="radio" name="service"></td>
+                <td><input type="radio" name="service"></td>
+            </tr>
+
+            <tr>
+                <td>Company Overall</td>
+                <td><input type="radio" name="company"></td>
+                <td><input type="radio" name="company"></td>
+                <td><input type="radio" name="company"></td>
+                <td><input type="radio" name="company"></td>
+                <td><input type="radio" name="company"></td>
+            </tr>
+        </table>
+
+        <!-- Likely -->
+        <label>How likely are you to *</label>
+        <table>
+            <tr>
+                <th></th>
+                <th>Very Unlikely</th>
+                <th>Unlikely</th>
+                <th>Neutral</th>
+                <th>Likely</th>
+                <th>Very Likely</th>
+            </tr>
+
+            <tr>
+                <td>Buy from us again</td>
+                <td><input type="radio" name="buy"></td>
+                <td><input type="radio" name="buy"></td>
+                <td><input type="radio" name="buy"></td>
+                <td><input type="radio" name="buy"></td>
+                <td><input type="radio" name="buy"></td>
+            </tr>
+        </table>
+
+        <!-- Comments -->
+        <label>Additional comments</label>
+        <textarea rows="4"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
 </body>
-
 </html>
